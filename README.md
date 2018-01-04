@@ -1,7 +1,19 @@
+<!--将该代码放入博客模板的head中即可-->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+  inlineMath: [['$','$'], ['\\(','\\)']],
+  processEscapes: true
+  }
+});
+</script>
+<!--latex数学显示公式-->
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 # Data_Strcture_with_Python
 ## Chapter 1 绪论
 本章讨论了一些与数据结构和算法有关的基础问题，包括：
-1. 程序开发过程：https://github.com/hogwild/Data_Strcture_with_Python/blob/master/README.md
+1. 程序开发过程：
    - 分析阶段
    - 设计阶段
    - 编码阶段
