@@ -55,3 +55,16 @@
 - 使用者：
   - 考虑该结构提供了哪些操作
   - 如何有效使用以解决自己的问题
+##### ADT
+- ADT List:        #一个表抽象数据类型
+  - List(self)     #表构造操作，创建一个新表
+  - is_empty(self) #判断self是否为一个空表
+  - len(self)      #获得self的长度
+  - prepend(self, elem) #将元素elem加入表中作为第一个元素
+  - append(self, elem)  #将元素elem加入表中作为最后一个元素
+  - insert(self, elem, i)  #将elem加入表中作为第i个元素，其他元素的顺序不变
+  - del_first(self)        #删除表中的第一个元素
+  - del_last(self)         #删除表中的尾元素
+  - del(self, i)           #删除表中的第i个元素
+  - search(self, elem)     #查找元素elem在表中出现的位置，不出现时返回 -1
+  - forall(self, op)       #对表中的每一个元素执行操作op
