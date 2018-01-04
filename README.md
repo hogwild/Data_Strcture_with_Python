@@ -1,15 +1,3 @@
-<!--将该代码放入博客模板的head中即可-->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-  inlineMath: [['$','$'], ['\\(','\\)']],
-  processEscapes: true
-  }
-});
-</script>
-<!--latex数学显示公式-->
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
 # Data_Strcture_with_Python
 ## Chapter 1 绪论
 本章讨论了一些与数据结构和算法有关的基础问题，包括：
