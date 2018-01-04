@@ -1,7 +1,7 @@
 # Data_Strcture_with_Python
 ## Chapter 1 绪论
 本章讨论了一些与数据结构和算法有关的基础问题，包括：
-1. 程序开发过程：
+1. 程序开发过程：https://github.com/hogwild/Data_Strcture_with_Python/blob/master/README.md
    - 分析阶段
    - 设计阶段
    - 编码阶段
