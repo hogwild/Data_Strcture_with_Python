@@ -108,7 +108,7 @@ class LList:
             if pred(p.elem):
                 yield p.elem
             p.next
-            
+
     def rev(self):
         p = None
         while self._head is not None:
@@ -154,7 +154,7 @@ class LListHT(LList):
         e = self._rear.elem
         self._rear = p
         return e
-    
+
     def rev(self):
         p = None
         self._rear = self._head
@@ -165,7 +165,43 @@ class LListHT(LList):
             q.next = p
             p = q
         self._head = p
-        
+    
+    def sort1(self):
+        if self._head is None:
+            return
+        crt = self._head.next
+        while crt is not None:
+            x = crt.elem
+            p = self._head
+            while p is not crt and p.elem <= x:
+                p = p.next
+            while p is not crt:
+                y = p.elem
+                p.elem = x
+                x = y
+                p = p.next
+            crt.elem = x
+            crt = crt.next
+
+    def sort(self):
+        p = self._head
+        if p is None or p.next is None:
+            return
+        rem = p.next
+        p.next = None
+        while rem is not None:
+            p = self._head
+            q = None
+            while p is not None and p.elem <= rem.elem:
+                q = p
+                p = p.next
+            if q is None:
+                self._head = rem
+            else:
+                q.next = rem
+            q = rem
+            rem = rem.next
+            q.next = p
 
 
 class LCList:
@@ -193,7 +229,7 @@ class LCList:
             p.next = self._rear.next
             self._rear.next = p
         self._rear = self._rear.next
-               
+
     def pop(self):
         if self._rear is None:
             raise LinkedListUnderFlow("in pop")
@@ -256,7 +292,7 @@ class LCList:
             if p is self._rear:
                 break
             p = p.next
-            
+
     def rev(self):
         p = self._rear
         rear = p.next
@@ -271,19 +307,19 @@ class LCList:
                 break
             q = temp
         self._rear = rear
-            
+
 
 #### Double Linked List
 class DLNode(LNode):
     def __init__(self, elem, prev=None, next_=None):
         super().__init__(elem, next_)
         self.prev = prev
-        
+
 
 class DLListHT(LListHT):
     def __init__(self):
         super().__init__()
-        
+
     def prepend(self, elem):
         p = DLNode(elem, None, self._head)
         if self._head is None:
@@ -291,7 +327,7 @@ class DLListHT(LListHT):
         else:
             p.next.prev = p
         self._head = p
-    
+
     def append(self, elem):
         p = DLNode(elem, self._rear, None)
         if self._head is None:
@@ -299,7 +335,7 @@ class DLListHT(LListHT):
         else:
             p.prev.next = p
         self._rear = p
-    
+
     def pop(self):
         if self._head is None:
             raise LinkedListUnderFlow("in pop of DLListHT")
@@ -308,7 +344,7 @@ class DLListHT(LListHT):
         if self._head is not None:
             self._head.prev = None
         return e
-    
+
     def pop_last(self):
         if self._head is None:
             raise LinkedListUnderFlow("in pop_last DLListHT")
@@ -319,8 +355,8 @@ class DLListHT(LListHT):
         else:
             self._rear.next = None
         return e
-    
-    
+
+
 
 if __name__ == "__main__":
 #    lst1 = LList()
